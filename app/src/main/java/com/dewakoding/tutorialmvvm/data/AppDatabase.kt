@@ -16,7 +16,7 @@ email : septiawanajipradana@gmail.com
 website : dewakoding.com
 
  **/
-@Database(entities = arrayOf(Note::class), version = 1)
+@Database(entities = arrayOf(Note::class), version = 2)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun noteDao(): NoteDao
 

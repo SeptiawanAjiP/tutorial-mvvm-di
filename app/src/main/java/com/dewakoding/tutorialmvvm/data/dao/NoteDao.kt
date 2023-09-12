@@ -22,7 +22,7 @@ website : dewakoding.com
 interface NoteDao {
     // CREATE
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(note: Note)
+    suspend fun insert(note: Note)
 
     // READ
     @Query("SELECT * FROM notes")
@@ -30,9 +30,9 @@ interface NoteDao {
 
     // UPDATE
     @Update
-    fun update(note: Note)
+    suspend fun update(note: Note)
 
     // DELETE
     @Delete
-    fun delete(note: Note)
+    suspend fun delete(note: Note)
 }
