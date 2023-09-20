@@ -17,7 +17,7 @@ website : dewakoding.com
 data class Note(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo("id")
-    var id: Int,
+    var id: Int?,
     @ColumnInfo("title")
     var title: String,
     @ColumnInfo("description")
