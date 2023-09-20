@@ -5,8 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dewakoding.tutorialmvvm.data.model.Note
 import com.dewakoding.tutorialmvvm.repository.NoteRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 
 /**
@@ -17,7 +19,8 @@ email : septiawanajipradana@gmail.com
 website : dewakoding.com
 
  **/
-class NoteViewModel(val noteRepository: NoteRepository): ViewModel() {
+@HiltViewModel
+class NoteViewModel @Inject constructor(val noteRepository: NoteRepository): ViewModel() {
     fun getAll(): LiveData<List<Note>> = noteRepository.getAll()
 
     fun insert(note: Note) = viewModelScope.launch(Dispatchers.IO) {
